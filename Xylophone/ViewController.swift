@@ -15,6 +15,7 @@ class ViewController: UIViewController {
     
     @IBAction func keyPressed(_ sender: UIButton) {
         
+        print(sender.currentTitle)
         playSound1()
         
     }
@@ -43,7 +44,8 @@ class ViewController: UIViewController {
     
     
     func playSound2() {
-        guard let path = Bundle.main.path(forResource: "D", ofType:"wav") else {
+        
+        guard let path = Bundle.main.path(forResource:"D", ofType:"wav") else {
             return }
         let url = URL(fileURLWithPath: path)
 
@@ -165,7 +167,5 @@ class ViewController: UIViewController {
             print(error.localizedDescription)
         }
     }
-    
-    
 }
 
